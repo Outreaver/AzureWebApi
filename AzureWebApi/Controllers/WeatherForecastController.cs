@@ -34,5 +34,15 @@ namespace AzureWebApi.Controllers
 
             return data;
         }
+
+        [HttpPost(Name = "AddWeather")]
+        public IActionResult Post([FromBody] object data)
+        {
+            var e = System.Text.Json.JsonSerializer.Serialize(data);
+            _logger.LogInformation("PostedData.");
+            _logger.LogInformation(e);
+
+            return Ok();
+        }
     }
 }
