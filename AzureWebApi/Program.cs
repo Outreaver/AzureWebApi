@@ -1,4 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
+builder.Logging.AddAzureWebAppDiagnostics();
+builder.Logging.AddConsole();
 
 // Add services to the container.
 
